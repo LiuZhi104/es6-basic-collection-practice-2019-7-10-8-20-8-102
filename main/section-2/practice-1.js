@@ -1,5 +1,22 @@
 'use strict';
 
 module.exports = function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+       var same=[];
+       var keyvalue={};
+       var countSame=1;
+       for(let i = 0 ; i < collection.length ; i++){
+      	  if(collection[i] == collection[i+1]){
+      		  countSame++;
+      	  }else{
+      		  var keyvalue = {
+      			'key': collection[i],
+      			'count': countSame
+      		  }
+      		  same.push(keyvalue);
+      		  keyvalue = {};
+      		  countSame=1;
+      	  }
+        }
+        return same;
+
 }
